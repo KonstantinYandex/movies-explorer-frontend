@@ -1,10 +1,10 @@
 .filter-checkbox {
-  width: 148px;
+  width: 174px;
   height: 20px;
   cursor: pointer;
   display: block;
   position: relative;
-  margin: 0 29px 0 0;
+  /* margin: 0 29px 0 0; */
 }
 
 .filter-checkbox__checkbox {

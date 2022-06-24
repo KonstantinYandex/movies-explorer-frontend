@@ -32,8 +32,8 @@ function SearchForm({ setSearchQuery, isMoviesShort, setIsMoviesShort, setIsPrel
           <div className="search-form__icon"/>
           <form className="search-form__field" onSubmit={searchFormHandler}>
             <input className="search-form__input" type="text" placeholder={(location.pathname === "/movies") ? lastQuery || "Фильм" : "Фильм"} name="searchValue" id="searchValue" value={searchValue || ''} onChange={useFormValidation.handleChange} required/>
+            <button className={`search-form__button ${!isFormValid && "search-form__button_disabled"}`} type="submit" disabled={!isFormValid}></button>
           </form>
-          <button className={`search-form__button ${!isFormValid && "search-form__button_disabled"}`} type="submit" disabled={!isFormValid}></button>
 
         </div>
         <p className="search-form__error">{errors.searchValue}</p>
