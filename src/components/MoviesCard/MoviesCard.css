@@ -80,6 +80,13 @@
 
 @media screen and (max-width: 767px) {
   .movies-card {
+    max-width: 339px;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .movies-card__image {
     max-width: 300px;
   }
 }
+

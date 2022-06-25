@@ -100,9 +100,41 @@
   }
 }
 
-@media screen and (max-width: 319px) {
+@media screen and (max-width: 397px) {
   .promo__title {
     width: 100%;
     font-size: 20px;
+  }
+}
+
+@media screen and (max-width:397px){
+  .promo__navtab__list-item{
+    width:82px;
+    height: 26px;
+    padding: 0px;
+    margin: 0;
+  }
+
+  .promo__navtab__list-link{
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .promo__navtab__list{
+    grid-template-columns: repeat(3, 86px);
+    grid-gap:6px;
+    gap:6px;
+  }
+}
+
+@media screen and (max-width:768px){
+  .promo{
+    max-width: 728px;
+  }
+}
+
+@media screen and (max-width:320px){
+  .promo{
+    max-width: 292px;
   }
 }
