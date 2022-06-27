@@ -27,8 +27,8 @@ function Footer() {
               </a>
             </li>
             <li className="footer__nav-item">
-              <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" className="footer__link">
-                Facebook
+              <a href="https://vk.com/kvn00" target="_blank" rel="noreferrer" className="footer__link">
+                ВКонтакте
               </a>
             </li>
           </ul>

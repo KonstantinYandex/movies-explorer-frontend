@@ -16,9 +16,10 @@ function AboutMe() {
           <nav>
             <ul className="about-me__social-links-list">
               <li className="about-me__social-links-list-element">
-                <a className="about-me__social-link" href="#" target="_blank" rel="noreferrer">
-                  Facebook
+                <a className="about-me__social-link" href="https://vk.com/kvn00" target="_blank" rel="noreferrer">
+                  ВКонтакте
                 </a>
+                {/* ссылка на facebook не работает в любом случае */}
               </li>
               <li className="about-me__social-links-list-element">
                 <a className="about-me__social-link" href="https://github.com/KonstantinYandex" target="_blank" rel="noreferrer">

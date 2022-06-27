@@ -109,9 +109,9 @@
 }
 
 .navigation__profile-icon {
-  background: url("../../images/header/icon__COLOR_icon-main.png");
-  min-width: 12px;
-  min-height: 12px;
+  background: url("../../images/header/accaunt-icon.svg");
+  min-width: 11.5px;
+  min-height: 14px;
 
 }
 
