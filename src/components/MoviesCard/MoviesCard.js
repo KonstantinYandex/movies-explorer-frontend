@@ -27,7 +27,7 @@ function MoviesCard({ movie, savedMovies, checkIsMovieSaved, handleSaveMovie, ha
         <li className="movies-card">
           <div className="movies-card__image-section">
             <a href={movie.trailer}>
-              <img className="movies-card__image" alt={movie.NameRU} src={movie.image}/>
+              <img className="movies-card__image" alt='На изображении показана отсылка к трейлеру фильма' src={movie.image}/>
             </a>
           </div>
           <div className="movies-card__container">
@@ -52,7 +52,7 @@ function MoviesCard({ movie, savedMovies, checkIsMovieSaved, handleSaveMovie, ha
         <li className="movies-card">
           <div className="movies-card__image-section">
             <a href={movie.trailer}>
-              <img className="movies-card__image" alt={movie.NameRU} src={movie.image}/>
+              <img className="movies-card__image" alt='На изображении показана отсылка к трейлеру фильма' src={movie.image}/>
             </a>
             <div className="movies-card__container">
             <div className="movies-card__text-container">

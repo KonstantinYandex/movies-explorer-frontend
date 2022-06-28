@@ -82,12 +82,20 @@
   .movies-card {
     max-width: 339px;
   }
-  
+
 }
 
 @media screen and (max-width: 790px) {
   .movies-card__image {
     max-width: 300px;
+  }
+
+  .movies-card__favorite-button{
+    right: 50px;
+  }
+
+  .movies-card__container{
+    padding: 14px 40px 14px 14px;
   }
 }
 

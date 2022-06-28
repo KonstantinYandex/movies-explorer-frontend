@@ -34,7 +34,7 @@
   }
 
   .menu__close-button {
-    background: url("../../images/header/close.png") no-repeat;
+    background: url("../../images/header/close.svg") no-repeat;
     width: 22px;
     height: 22px;
     object-fit: cover;
