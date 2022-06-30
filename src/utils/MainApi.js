@@ -32,7 +32,14 @@ class MainApi {
         email,
         password,
       }),
-    }).then((res) => this._getResponse(res));
+    }).then((res) => this._getResponse(res))
+    .then((data) => {
+      if (data.token) {
+          localStorage.setItem('jwt', data.token);
+          this.updateHeaders()
+          return data.token
+      }
+  })
   }
 
   getCurrentUser() {
@@ -67,7 +74,6 @@ class MainApi {
     return fetch(`${this._baseUrl}/movies`, {
       method: "POST",
       headers: this._headers,
-      credentials: "include",
       body: JSON.stringify({
         country: movie.country,
         director: movie.director,
@@ -75,7 +81,7 @@ class MainApi {
         year: movie.year,
         description: movie.description,
         image: movie.image,
-        trailer: movie.trailer,
+        trailerLink: movie.trailer,
         thumbnail: movie.thumbnail,
         movieId: movie.movieId,
         nameRU: movie.nameRU,
@@ -100,18 +106,11 @@ class MainApi {
     }).then((res) => this._getResponse(res));
   }
 
-  updateHeaders() {
-    this._headers = {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-    };
-  }
 }
 
 const mainApi = new MainApi({
   baseUrl: "https://api.movies-konstantin.nomoredomains.xyz",
   headers: {
-    authorization: `Bearer ${localStorage.getItem("jwt")}`,
     "Content-Type": "application/json",
   },
 });

@@ -33,6 +33,10 @@ function App() {
   const history = useHistory();
   const location = useLocation();
 
+  function closeAllPopups(){
+    setIsInfoTooltipOpen(false)
+  }
+
   function handleRegister({ email, password, name }) {
     clearInfoTooltip();
     setIsPreloaderShowing(true);
@@ -42,6 +46,8 @@ function App() {
         setIsInfoTooltipOpen(true);
         setInfoTooltipMessage(YOU_SUCCESS_REGISTER);
         handleLogin({ email, password });
+        history.push("/movies");
+
       })
       .catch((err) => {
         setIsResponseSuccessful(false);
@@ -51,6 +57,7 @@ function App() {
       .finally(() => {
         setIsSuccessMessageShowing(true);
         setIsPreloaderShowing(false);
+        setTimeout(closeAllPopups,2500)
       })
   }
 
