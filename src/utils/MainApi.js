@@ -1,14 +1,14 @@
 class MainApi {
-  constructor(option) {
+  constructor (option) {
     this._baseUrl = option.baseUrl;
     this._headers = option.headers;
   }
 
   _getResponse(res) {
     if (res.ok) {
-      return res.json();
+        return res.json();
     }
-    return Promise.reject(`Внимание! Ошибка: ${res.status}`);
+    return Promise.reject(`Внимание! Ошибка: ${res.status}`)
   }
 
   register({ name, password, email }) {
@@ -19,8 +19,9 @@ class MainApi {
         name,
         password,
         email,
-      }),
-    }).then((res) => this._getResponse(res));
+      })
+    })
+    .then((res) => this._getResponse(res));
   }
 
   authorize({ email, password }) {
@@ -31,15 +32,9 @@ class MainApi {
       body: JSON.stringify({
         email,
         password,
-      }),
-    }).then((res) => this._getResponse(res))
-    .then((data) => {
-      if (data.token) {
-          localStorage.setItem('jwt', data.token);
-          this.updateHeaders()
-          return data.token
-      }
-  })
+      })
+    })
+    .then((res) => this._getResponse(res));
   }
 
   getCurrentUser() {
@@ -47,7 +42,8 @@ class MainApi {
       method: "GET",
       headers: this._headers,
       credentials: "include",
-    }).then((res) => this._getResponse(res));
+    })
+    .then((res) => this._getResponse(res));
   }
 
   updateCurrentUser(data) {
@@ -58,8 +54,9 @@ class MainApi {
       body: JSON.stringify({
         name: data.name,
         email: data.email,
-      }),
-    }).then((res) => this._getResponse(res));
+      })
+    })
+    .then((res) => this._getResponse(res));
   }
 
   getSavedMovies() {
@@ -67,13 +64,15 @@ class MainApi {
       method: "GET",
       headers: this._headers,
       credentials: "include",
-    }).then((res) => this._getResponse(res));
+    })
+    .then((res) => this._getResponse(res));
   }
 
   setSavedMovie(movie) {
     return fetch(`${this._baseUrl}/movies`, {
       method: "POST",
       headers: this._headers,
+      credentials: "include",
       body: JSON.stringify({
         country: movie.country,
         director: movie.director,
@@ -81,21 +80,25 @@ class MainApi {
         year: movie.year,
         description: movie.description,
         image: movie.image,
-        trailerLink: movie.trailer,
+        trailer: movie.trailer,
         thumbnail: movie.thumbnail,
         movieId: movie.movieId,
         nameRU: movie.nameRU,
         nameEN: movie.nameEN,
-      }),
-    }).then((res) => this._getResponse(res));
+      })
+    })
+    .then((res) => this._getResponse(res));
   }
+
+  
 
   deleteSavedMovie(movie) {
     return fetch(`${this._baseUrl}/movies/${movie._id}`, {
       method: "DELETE",
       headers: this._headers,
       credentials: "include",
-    }).then((res) => this._getResponse(res));
+    })
+    .then((res) => this._getResponse(res));
   }
 
   logout() {
@@ -103,9 +106,9 @@ class MainApi {
       method: "GET",
       headers: this._headers,
       credentials: "include",
-    }).then((res) => this._getResponse(res));
+    })
+    .then((res) => this._getResponse(res));
   }
-
 }
 
 const mainApi = new MainApi({
@@ -115,4 +118,7 @@ const mainApi = new MainApi({
   },
 });
 
+
 export default mainApi;
+
+
